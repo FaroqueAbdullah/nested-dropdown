@@ -33,6 +33,7 @@ function reducer(state, action) {
 const UserForm = function({ onUserUpdate, updateUserData }) {
   const [state, dispatch] = useReducer(reducer, { userId: '', name: '', sector: '', sectorValue: '' });
   const [ isOpenDropDown, setOpenDropDown ] = useState( false )
+  const [ showError, setShowError ] = useState( false )
 
   const navOptions = [
     {
@@ -96,7 +97,13 @@ const UserForm = function({ onUserUpdate, updateUserData }) {
   ]
 
   const handleSubmit = function() {
+    if ( !state.name || !state.sector ) {
+      setShowError(true)
+      return
+    }
+
     onUserUpdate( state )
+    setShowError(false)
     dispatch({
       type: 'reset_state',
     });
@@ -149,10 +156,14 @@ const UserForm = function({ onUserUpdate, updateUserData }) {
             <NestedDropDown 
               navOptions = { navOptions } 
               navOptionSelect={ data => updateSectorValue( data ) }
+              selectedOption={ state.sectorValue }
             />
           </div>
           
         </label>
+        {
+          showError && <span className='error-info'>*Please add Name and Sector</span>
+        }
         <button className="submit-btn" type="submit" onClick={handleSubmit}> { state.userId ? 'Update' : 'Submit' } </button>
       </div>
     </div>

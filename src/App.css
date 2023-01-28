@@ -52,8 +52,11 @@
 .nestedDropDown-option {
   display: flex;
   flex-direction: column;
-  padding-top: 0.5rem;
   cursor: pointer;
+}
+
+.nestedDropDown-option span {
+  padding: 0.2rem 0.5rem;
 }
 
 .navOption-container {
@@ -100,4 +103,20 @@
 .list-heading {
   font-size: 20px;
   font-weight: 600;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+.error-info {
+  padding-left: 1rem;
+  font-size: 13px;
+  color: #CC0000;
+}
+
+.selected {
+  color: #fff;
+  background-color: #000;
 }
