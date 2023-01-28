@@ -1,38 +1,102 @@
 .App {
-  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
   min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.layout-container {
+  padding: 1rem;
+}
+
+.user-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-form {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-form label {
+  padding: .5rem;
+}
+
+.user-form-level {
+  width: 300px
+}
+
+.user-form-input {
+  width: 300px;
+  padding: .4rem;
+  margin-top: .5rem;
+}
+
+.submit-btn {
+  padding: 0.5rem;
+  margin: 1.5rem 0.5rem;
+}
+
+
+.nestedDropDown-option {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.navOption-container {
+  position: absolute;
+  background: #fff;
+  border: 2px solid #f0f0f0;
+  width: 300px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.table-list-container {
+  min-height: 16rem;
+}
+
+.list-container {
+  display: flex;
+  border-collapse: collapse;
+}
+
+.list-option {
+  padding: .5rem;
+  border: 1px solid #f0f0f0;
+  display: inline-block;
+  width: 6rem;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.list-option button {
+  margin: auto;
+  width: 100%;
+}
+
+.list-heading {
+  font-size: 20px;
+  font-weight: 600;
 }
